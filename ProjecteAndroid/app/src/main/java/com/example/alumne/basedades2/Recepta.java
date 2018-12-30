@@ -6,7 +6,10 @@ import java.util.ArrayList;
 
 public class Recepta {
     private String nom;
+    private String text;
     private ArrayList<Ingredient> ingredients;
+
+
 
     public Recepta(){
         this.nom = "BUIDA";
@@ -50,5 +53,13 @@ public class Recepta {
 
     public String getNom(){
         return this.nom;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }
