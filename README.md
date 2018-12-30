@@ -28,3 +28,7 @@ Listview recepta
 Activity veurerecepta
 Activity AfegirRecepta
 Tota la lògica de la bd
+
+++
+He començat a crear la lògica SQL. Me qued a la classe DataSourcerebost, a la pag 4 del pdf de l'activitat de persistencia.
+
