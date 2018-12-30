@@ -18,3 +18,13 @@ Afegir ingredient
 Més idees:
 A la llista ingredient posar dues icones que marquin si en queda i si està a la llista de la compra, i que pitjant a sobre permeti cnaviar-ne l'estat
 
+30/12
+He creat els pojos d'Ingredient i de Recepta. He creat els layouts dels menus principals de navegació i el de la llista d'ingredients. A l'array adapter he posat un listener perque els imageview del layout ingredient_a_llista faci de botó per canviar els booleans dels pojos.
+ME QUEDA: 
+Que es carregui la llista d'ingredients de la bd. 
+Que els canvis que es facin amb els botons passin a la bd.
+Activity afegir ingredient
+Listview recepta
+Activity veurerecepta
+Activity AfegirRecepta
+Tota la lògica de la bd
