@@ -4,37 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MenuIngredients">
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button7"
         android:layout_width="388dp"
         android:layout_height="124dp"
-        android:text="Sortir"
+        android:text="Tornar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button6"
         android:layout_width="388dp"
         android:layout_height="124dp"
-        android:text="Veure Llista Compra"
+        android:text="Afegir ingredient"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button5"
         android:layout_width="388dp"
         android:layout_height="124dp"
-        android:text="Menú receptes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="388dp"
-        android:layout_height="124dp"
-        android:text="Menú ingredients"
+        android:text="Veure Llista Ingredients"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
