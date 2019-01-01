@@ -31,4 +31,4 @@ Tota la lògica de la bd
 
 ++
 He començat a crear la lògica SQL. Me qued a la classe DataSourcerebost, a la pag 4 del pdf de l'activitat de persistencia.
-
+Als apunts tenc posat que hi ha d'haver ajudes en la introducció de dades. Ho podria fer en introduir els ingredients a la recepta i en incloure ingredients en llistes d'ingredients.
