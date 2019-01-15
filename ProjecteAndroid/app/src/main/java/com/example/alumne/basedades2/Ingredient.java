@@ -1,6 +1,7 @@
 package com.example.alumne.basedades2;
 
 public class Ingredient {
+    private long id;
     private String nom;
     private boolean queda;
     private boolean compra;
@@ -11,6 +12,18 @@ public class Ingredient {
         this.queda = true;
         this.basic = false;
         this.compra = false;
+    }
+
+    public Ingredient(){
+
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNom() {
