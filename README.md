@@ -32,3 +32,6 @@ Tota la lògica de la bd
 ++
 He començat a crear la lògica SQL. Me qued a la classe DataSourcerebost, a la pag 4 del pdf de l'activitat de persistencia.
 Als apunts tenc posat que hi ha d'haver ajudes en la introducció de dades. Ho podria fer en introduir els ingredients a la recepta i en incloure ingredients en llistes d'ingredients.
+
+18/01
+He seguit fent feina amb la lógica de BBDD. Estic fent els métodes per introduir, esborrar, actualitzar i recuperar de la BBDD ingredients i receptes. Especial atenció a la gestió de la col·lecció d'ingredients de cada recepta. Crec que al métodes getAllIngs i getAllRecs el while ha de dur una negació, però fins que no faci proves d'execució, no ho vull canviar que després pot ser dificil de trobar. 

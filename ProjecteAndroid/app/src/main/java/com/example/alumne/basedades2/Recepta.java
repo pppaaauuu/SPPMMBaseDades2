@@ -5,11 +5,18 @@ import com.example.alumne.basedades2.Ingredient;
 import java.util.ArrayList;
 
 public class Recepta {
+    private long id;
     private String nom;
     private String text;
     private ArrayList<Ingredient> ingredients;
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public Recepta(){
         this.nom = "BUIDA";
@@ -31,12 +38,8 @@ public class Recepta {
     }
 
     public void afegirIngredient(Ingredient ing){
-        if(!teIngredient(ing)){
             ingredients.add(ing);
 
-        }else{
-            System.out.println("Ja té aquest ingredient");
-        }
     }
 
     public ArrayList<Ingredient> getIngredients(){
