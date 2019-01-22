@@ -16,6 +16,8 @@ public class LlistaIngredients extends AppCompatActivity {
         setContentView(R.layout.activity_llista_ingredients);
         ListView lv = (ListView) findViewById(R.id.listView);
 //Aquí s'ha de cridar la BD per carregar l'arraylist.
+        DataSourceRebost DataSource = new DataSourceRebost(this);
+        llistaingredients = DataSource.getAllIng();
         ArrayAdapter<Ingredient> adap = new IngredientArrayAdapter(this, R.layout.ingredient_a_llista, llistaingredients);
 
         lv.setAdapter(adap);
