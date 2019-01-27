@@ -28,7 +28,7 @@ public class DataSourceRebost {
     public void close() {
         dbAjuda.close();
     }
-    //PAG4 DEL PDF DE PERSISTENCIA
+
 
     public Ingredient createIng(Ingredient ing){
         ContentValues values = new ContentValues();
@@ -71,7 +71,7 @@ public class DataSourceRebost {
 
     public ArrayList<Ingredient> getAllIng(){
         ArrayList<Ingredient> ings = new ArrayList<Ingredient>();
-        Cursor cursor = database.query(RebostHelper.TABLE_INGREDIENTS,allColumnsIng, null, null, null, null, RebostHelper.COLUMN_NOMINGREDIENT + "DESC");
+        Cursor cursor = database.query(RebostHelper.TABLE_INGREDIENTS, allColumnsIng, null, null, null, null, RebostHelper.COLUMN_NOMINGREDIENT + " DESC");
         cursor.moveToFirst();
         while(cursor.isAfterLast()){
             Ingredient ing = cursorToIng(cursor);

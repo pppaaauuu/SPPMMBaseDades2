@@ -40,16 +40,18 @@ public class RebostHelper extends SQLiteOpenHelper {
     private static final String DATABASE_CREATE_RECING = "create table "
             + TABLE_RECPING + "("
             + COLUMN_RECEPTA + " integer,"
-            + COLUMN_INGREDIENT + " integer "
+            + COLUMN_INGREDIENT + " integer ,"
+            + "CONSTRAINT pk_recing "
+            + "PRIMARY KEY (" + COLUMN_RECEPTA + ", " + COLUMN_INGREDIENT + "), "
             + "CONSTRAINT fk_rec "
-            + "FOREIGN KEY ("+COLUMN_RECEPTA + ")"
+            + "FOREIGN KEY ("+COLUMN_RECEPTA + ") "
             + "REFERENCES " + TABLE_RECEPTA + "("
             + COLUMN_IDRECEPTA + "),"
             + "CONSTRAINT fk_ing "
             + "FOREIGN KEY ("+COLUMN_INGREDIENT + ")"
             + "REFERENCES " + TABLE_INGREDIENTS + "("
-            + COLUMN_IDINGREDIENT + "),"
-            + "PRIMARY KEY (" + COLUMN_RECEPTA + ", " + COLUMN_INGREDIENT + ");";
+            + COLUMN_IDINGREDIENT + "))";
+
 
     public RebostHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

@@ -15,10 +15,28 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.example.alumne.basedades2.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-        <activity android:name=".MenuIngredients" />
+        <activity android:name=".MenuIngredients">
+            <intent-filter>
+                <action android:name="com.example.alumne.basedades2.MenuIngredients" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MenuReceptes" />
-        <activity android:name=".LlistaIngredients"></activity>
+        <activity android:name=".LlistaIngredients">
+            <intent-filter>
+                <action android:name="com.example.alumne.basedades2.LlistaIngredients" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AfegirIngredient"></activity>
     </application>
 
 </manifest>
