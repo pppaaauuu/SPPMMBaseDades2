@@ -18,8 +18,6 @@ public class MenuIngredients extends AppCompatActivity implements View.OnClickLi
         butllistaing = (Button) findViewById(R.id.button5);
         butafegiring = (Button) findViewById(R.id.button6);
         buttornar = (Button) findViewById(R.id.button7);
-
-
         butllistaing.setOnClickListener(this);
         butafegiring.setOnClickListener(this);
         buttornar.setOnClickListener(this);

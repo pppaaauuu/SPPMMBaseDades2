@@ -148,8 +148,8 @@ public class DataSourceRebost {
         return rec;
     }
 
-    public List<Recepta> getAllRec(){
-        List<Recepta> recs = new ArrayList<Recepta>();
+    public ArrayList<Recepta> getAllRec(){
+        ArrayList<Recepta> recs = new ArrayList<Recepta>();
         Cursor cursor = database.query(RebostHelper.TABLE_RECEPTA, allColumnsRec, null, null, null, null, RebostHelper.COLUMN_NOMRECEPTA + "DESC");
         cursor.moveToFirst();
         while(cursor.isAfterLast()){
