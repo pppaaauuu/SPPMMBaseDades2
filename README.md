@@ -38,3 +38,6 @@ He seguit fent feina amb la lógica de BBDD. Estic fent els métodes per introdu
 
 27/01
 Durant sa setmana a classe he fet els mètodes dels connectors a BD, ara he d'acabar les activities i els layouts per mostrar les dades
+
+29/01
+La llista ja mostra el contingut de la taula ingredients. Estic posant un listener a l'array adapter per poder actualitzar la informació de la llista, però el posi com el posi, sempre agafa el darrer ingredient de la llista.

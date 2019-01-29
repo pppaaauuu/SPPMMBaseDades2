@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -16,7 +17,6 @@ public class LlistaIngredients extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llista_ingredients);
         lv = (ListView) findViewById(R.id.listView);
-
         mostraIngs();
 
     }
@@ -31,7 +31,7 @@ public class LlistaIngredients extends AppCompatActivity {
             lv.setAdapter(adap);
             dataSource.close();
         }catch(SQLException e){
-
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
     }
 

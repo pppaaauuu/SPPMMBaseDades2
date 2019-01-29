@@ -73,7 +73,7 @@ public class DataSourceRebost {
         ArrayList<Ingredient> ings = new ArrayList<Ingredient>();
         Cursor cursor = database.query(RebostHelper.TABLE_INGREDIENTS, allColumnsIng, null, null, null, null, RebostHelper.COLUMN_NOMINGREDIENT + " DESC");
         cursor.moveToFirst();
-        while(cursor.isAfterLast()){
+        while(!cursor.isAfterLast()){
             Ingredient ing = cursorToIng(cursor);
             ings.add(ing);
             cursor.moveToNext();

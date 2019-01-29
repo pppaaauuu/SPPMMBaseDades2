@@ -41,8 +41,9 @@ TextView text;
             if(ing.getId() != 0 && ing.getId() != -1){
                 text.setText("");
                 finish(ing.getNom());
+            }else{
+                text.setText("No s'ha pogut introduïr");
             }
-            text.setText("No s'ha pogut introduïr");
         }
 
     }

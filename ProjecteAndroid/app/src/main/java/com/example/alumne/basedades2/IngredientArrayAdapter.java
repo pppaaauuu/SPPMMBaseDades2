@@ -8,11 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IngredientArrayAdapter extends ArrayAdapter<Ingredient> {
+public class IngredientArrayAdapter extends ArrayAdapter<Ingredient> implements View.OnClickListener{
     private Context context;
     private List<Ingredient> ingredients;
     Ingredient ing;
@@ -31,7 +33,7 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient> {
 
         ing = ingredients.get(position);
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.ingredient_a_llista, null);
+        final View view = inflater.inflate(R.layout.ingredient_a_llista, null);
         nom = (TextView) view.findViewById(R.id.textView);
         bas = (ImageView) view.findViewById(R.id.imageView);
         queda = (ImageView) view.findViewById(R.id.imageView2);
@@ -52,9 +54,11 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient> {
         }else{
             compra.setImageResource(android.R.drawable.presence_busy);
         }
-        bas.setOnClickListener(new android.widget.TextView.OnClickListener() {
+        bas.setOnClickListener(this);
+        /*bas.setOnClickListener(new android.widget.TextView.OnClickListener() {
             @Override
             public void onClick (View v) {
+
                 if(ing.isBasic()){
                     ing.setBasic(false);
                     bas.setImageResource(android.R.drawable.presence_busy);
@@ -62,8 +66,21 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient> {
                     ing.setBasic(true);
                     bas.setImageResource(android.R.drawable.presence_online);
                 }
+                DataSourceRebost dsr = new DataSourceRebost(context);
+                boolean upd = false;
+                try{
+                    dsr.open();
+                    upd = dsr.updateIng(ing);
+                    dsr.close();
+                }catch(SQLException e){
+                   // Toast.makeText(v.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+                if(!upd){
+                    Toast.makeText(v.getContext(), "No s'ha actualitzat ingredient", Toast.LENGTH_LONG).show();
+                }
+
             }
-        });
+        } );*/
         queda.setOnClickListener(new android.widget.TextView.OnClickListener() {
           @Override
           public void onClick (View v) {
@@ -74,6 +91,7 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient> {
                   ing.setQueda(true);
                   queda.setImageResource(android.R.drawable.presence_online);
               }
+
           }
         });
         compra.setOnClickListener(new android.widget.TextView.OnClickListener() {
@@ -86,8 +104,34 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient> {
                     ing.setCompra(true);
                     compra.setImageResource(android.R.drawable.presence_online);
                 }
+
             }
         });
         return view;
+    }
+
+    public void onClick(View v){
+      
+        if(v.getId() == R.id.imageView){
+            if(ing.isBasic()){
+                ing.setBasic(false);
+                bas.setImageResource(android.R.drawable.presence_busy);
+            }else{
+                ing.setBasic(true);
+                bas.setImageResource(android.R.drawable.presence_online);
+            }
+                DataSourceRebost dsr = new DataSourceRebost(context);
+                boolean upd = false;
+                try{
+                    dsr.open();
+                    upd = dsr.updateIng(ing);
+                    dsr.close();
+                }catch(SQLException e){
+                   // Toast.makeText(v.getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                }
+                if(!upd){
+                    Toast.makeText(v.getContext(), "No s'ha actualitzat ingredient", Toast.LENGTH_LONG).show();
+                }
+        }
     }
 }
