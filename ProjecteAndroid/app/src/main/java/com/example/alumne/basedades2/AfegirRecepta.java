@@ -28,7 +28,9 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
         ings.setFocusable(false);
         guardar.setOnClickListener(this);
         afegirings.setOnClickListener(this);
-
+        if(nom.isFocused()){
+            nom.selectAll();
+        }
     }
 
 
@@ -47,27 +49,27 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
             if(rec.getId() >0){
                 finish();
             }
-        /*} else if (v == afegirings) {
+        } else if (v == afegirings) {
             Intent inte = new Intent(this, AfegirIngsARec.class);
-            ArrayList<Long> ingsids = new ArrayList<>();
+            ArrayList<Integer> ingsids = new ArrayList<>();
             for(int i = 0; i < ingredients.size(); i++){
-                ingsids.add(ingredients.get(i).getId());
+                ingsids.add(new Integer((int)ingredients.get(i).getId()));
             }
             inte.putExtra("ingredients", ingsids);
-            startActivityForResult(inte, REQUEST_CODE);*/
+            startActivityForResult(inte, REQUEST_CODE);
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
-            long[] ingsid = data.getExtras().getLongArray("ingredients");
+            ArrayList<Integer> ingsid = data.getExtras().getIntegerArrayList("ingredients");
             DataSourceRebost db = new DataSourceRebost(this);
             ingredients.clear();
             try {
                 db.open();
-                for (int i = 0; i < ingsid.length; i++) {
-                    ingredients.add(db.getIng(ingsid[i]));
+                for (int i = 0; i < ingsid.size(); i++) {
+                    ingredients.add(db.getIng(ingsid.get(i)));
                     ings.setText(ings.getText() + ", " + ingredients.get(i).getNom());
                 }
                 db.close();

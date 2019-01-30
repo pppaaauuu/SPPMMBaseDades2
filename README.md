@@ -41,3 +41,13 @@ Durant sa setmana a classe he fet els mètodes dels connectors a BD, ara he d'ac
 
 29/01
 La llista ja mostra el contingut de la taula ingredients. Estic posant un listener a l'array adapter per poder actualitzar la informació de la llista, però el posi com el posi, sempre agafa el darrer ingredient de la llista.
+
+30/01
+Finalment he arreglat lallista d'ingredients fent final el paràmetre position per que l'agafi el mètode on click i enlloc de canviar la imatge, actualitzar les dades de l'adapter. 
+TODO:
+- Afegir ingredient a recepta (acab de posar l'spinner)
+- Editar ingredient
+- itemClickListener a llista recepta
+- Fer servir layout de introduir recepta per editar-la i per mostrar-la
+- Mètode suggerir recepta
+- Proves!
