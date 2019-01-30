@@ -25,45 +25,55 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
         ings = (EditText) findViewById(R.id.editText4);
         textrec = (EditText) findViewById(R.id.editText5);
         nom = (EditText) findViewById(R.id.editText2);
+        ings.setFocusable(false);
+        guardar.setOnClickListener(this);
+        afegirings.setOnClickListener(this);
+
     }
 
 
-    public void onClick(View v){
-        if(v == guardar){
+    public void onClick(View v) {
+        if (v == guardar) {
             Recepta rec = new Recepta(nom.getText().toString());
             rec.setText(textrec.getText().toString());
             rec.setIngredients(ingredients);
             DataSourceRebost db = new DataSourceRebost(this);
-            try{
+            try {
                 db.open();
-                db.createRec(rec);
+                rec = db.createRec(rec);
                 db.close();
-            }catch(SQLException e){}
-        }else if(v == afegirings){
+            } catch (SQLException e) {
+            }
+            if(rec.getId() >0){
+                finish();
+            }
+        /*} else if (v == afegirings) {
             Intent inte = new Intent(this, AfegirIngsARec.class);
             ArrayList<Long> ingsids = new ArrayList<>();
             for(int i = 0; i < ingredients.size(); i++){
                 ingsids.add(ingredients.get(i).getId());
             }
             inte.putExtra("ingredients", ingsids);
-            startActivityForResult(inte, REQUEST_CODE);
+            startActivityForResult(inte, REQUEST_CODE);*/
         }
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(resultCode == RESULT_OK && requestCode == REQUEST_CODE){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
             long[] ingsid = data.getExtras().getLongArray("ingredients");
             DataSourceRebost db = new DataSourceRebost(this);
             ingredients.clear();
-            try{
+            try {
                 db.open();
-                for(int i = 0; i < ingsid.length; i++){
-                    ingredients.add(db.getIng(ingsid.[i]);
+                for (int i = 0; i < ingsid.length; i++) {
+                    ingredients.add(db.getIng(ingsid[i]));
                     ings.setText(ings.getText() + ", " + ingredients.get(i).getNom());
                 }
                 db.close();
-            }catch(SQLException e){}
+            } catch (SQLException e) {
+            }
 
+        }
     }
 }

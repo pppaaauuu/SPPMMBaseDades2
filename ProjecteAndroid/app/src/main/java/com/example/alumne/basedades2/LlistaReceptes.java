@@ -16,7 +16,7 @@ public class LlistaReceptes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_llista_receptes);
-        lv = (ListView) findViewById(R.id.listView);
+        lv = (ListView) findViewById(R.id.listView2);
         mostraRecs();
     }
 
@@ -25,7 +25,7 @@ public class LlistaReceptes extends AppCompatActivity {
         try {
             dataSource.open();
             llistareceptes = dataSource.getAllRec();
-            ArrayAdapter<Recepta> adap = new ReceptaArrayAdapter(this, R.layout.ingredient_a_llista, llistareceptes);
+            ArrayAdapter<Recepta> adap = new ReceptaArrayAdapter(this, R.layout.recepta_a_llista, llistareceptes);
             lv.setAdapter(adap);
             dataSource.close();
         }catch(SQLException e){

@@ -102,12 +102,15 @@ public class DataSourceRebost {
         long insertId = database.insert(RebostHelper.TABLE_RECEPTA,null,values);
         rec.setId(insertId);
         List<Ingredient> ings = rec.getIngredients();
-        for(int i = 0; i < ings.size(); i++){
-            ContentValues values2 = new ContentValues();
-            values2.put(RebostHelper.COLUMN_INGREDIENT, ings.get(i).getId());
-            values2.put(RebostHelper.COLUMN_RECEPTA, rec.getId());
-            database.insert(RebostHelper.TABLE_RECPING, null, values2);
+        if(ings != null && ings.size() > 0) {
+            for (int i = 0; i < ings.size(); i++) {
+                ContentValues values2 = new ContentValues();
+                values2.put(RebostHelper.COLUMN_INGREDIENT, ings.get(i).getId());
+                values2.put(RebostHelper.COLUMN_RECEPTA, rec.getId());
+                database.insert(RebostHelper.TABLE_RECPING, null, values2);
+            }
         }
+
         return rec;
     }
 
@@ -150,9 +153,9 @@ public class DataSourceRebost {
 
     public ArrayList<Recepta> getAllRec(){
         ArrayList<Recepta> recs = new ArrayList<Recepta>();
-        Cursor cursor = database.query(RebostHelper.TABLE_RECEPTA, allColumnsRec, null, null, null, null, RebostHelper.COLUMN_NOMRECEPTA + "DESC");
+        Cursor cursor = database.query(RebostHelper.TABLE_RECEPTA, allColumnsRec, null, null, null, null, RebostHelper.COLUMN_NOMRECEPTA + " DESC");
         cursor.moveToFirst();
-        while(cursor.isAfterLast()){
+        while(!cursor.isAfterLast()){
             Recepta rec = cursorToRec(cursor);
             recs.add(rec);
             cursor.moveToNext();
@@ -173,9 +176,9 @@ public class DataSourceRebost {
     private ArrayList<Ingredient> getIngsRec(Long recid){
         ArrayList<Ingredient> ings = new ArrayList<Ingredient>();
         String[] colings = {RebostHelper.COLUMN_INGREDIENT};
-        Cursor cursor = database.query(RebostHelper.TABLE_RECPING, colings, RebostHelper.COLUMN_RECEPTA + '=' + recid, null, null, null, RebostHelper.COLUMN_INGREDIENT + "DESC");
+        Cursor cursor = database.query(RebostHelper.TABLE_RECPING, colings, RebostHelper.COLUMN_RECEPTA + '=' + recid, null, null, null, RebostHelper.COLUMN_INGREDIENT + " DESC");
         cursor.moveToFirst();
-        while(cursor.isAfterLast()){
+        while(!cursor.isAfterLast()){
             Ingredient ing = cursorToIng(cursor);
             ings.add(ing);
             cursor.moveToNext();

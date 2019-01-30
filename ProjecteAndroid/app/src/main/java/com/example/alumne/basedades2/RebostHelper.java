@@ -34,13 +34,13 @@ public class RebostHelper extends SQLiteOpenHelper {
     private static final String DATABASE_CREATE_REC = "create table "
             + TABLE_RECEPTA + "(" + COLUMN_IDRECEPTA
             + " integer primary key autoincrement, "
-            + COLUMN_NOMRECEPTA + " text not null,"
+            + COLUMN_NOMRECEPTA + " text not null, "
             + COLUMN_TEXTRECEPTA + " text);";
 
     private static final String DATABASE_CREATE_RECING = "create table "
             + TABLE_RECPING + "("
-            + COLUMN_RECEPTA + " integer,"
-            + COLUMN_INGREDIENT + " integer ,"
+            + COLUMN_RECEPTA + " integer, "
+            + COLUMN_INGREDIENT + " integer , "
             + "CONSTRAINT pk_recing "
             + "PRIMARY KEY (" + COLUMN_RECEPTA + ", " + COLUMN_INGREDIENT + "), "
             + "CONSTRAINT fk_rec "

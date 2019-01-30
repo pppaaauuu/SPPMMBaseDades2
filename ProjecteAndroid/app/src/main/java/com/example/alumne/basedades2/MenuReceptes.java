@@ -32,8 +32,8 @@ public class MenuReceptes extends AppCompatActivity implements View.OnClickListe
             Intent inten = new Intent(this, AfegirRecepta.class);
             startActivityForResult(inten, REQUEST_CODE);
         }else if(v == butsuggerir){
-            Intent inten = new Intent(this, SuggerirRecepta.class);
-            startActivity(inten);
+         //   Intent inten = new Intent(this, SuggerirRecepta.class);
+         //   startActivity(inten);
         }else if(v == butsortir){
            finish();
         }
