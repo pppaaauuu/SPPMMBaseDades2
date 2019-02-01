@@ -2,6 +2,7 @@ package com.example.alumne.basedades2;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,7 @@ public class ReceptaArrayAdapter  extends ArrayAdapter<Recepta> {
             if(!ings.get(i).isQueda()) faltaing += ings.get(i).getNom();
         }
         falten.setText(faltaing);
+        falten.setTextColor(Color.RED);
         if(faltaing.length() >0){
             totok.setVisibility(View.INVISIBLE);
         }else{

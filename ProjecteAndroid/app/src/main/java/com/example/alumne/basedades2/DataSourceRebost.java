@@ -74,7 +74,7 @@ public class DataSourceRebost {
         Cursor cursor = database.query(RebostHelper.TABLE_INGREDIENTS, allColumnsIng, null, null, null, null, RebostHelper.COLUMN_NOMINGREDIENT + " DESC");
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            Ingredient ing = cursorToIng(cursor);
+            Ingredient ing = getIng(cursor.getLong(0));
             ings.add(ing);
             cursor.moveToNext();
         }
@@ -84,6 +84,7 @@ public class DataSourceRebost {
 
     private Ingredient cursorToIng(Cursor cursor){
         Ingredient ing = new Ingredient();
+        cursor.moveToPosition(0);
         ing.setId(cursor.getLong(0));
         ing.setNom(cursor.getString(1));
         if(cursor.getInt(2) == 0) ing.setBasic(false);
@@ -166,6 +167,7 @@ public class DataSourceRebost {
 
     private Recepta cursorToRec(Cursor cursor){
         Recepta rec = new Recepta();
+        cursor.moveToPosition(0);
         rec.setId(cursor.getLong(0));
         rec.setNom(cursor.getString(1));
         rec.setText(cursor.getString(2));
@@ -179,7 +181,7 @@ public class DataSourceRebost {
         Cursor cursor = database.query(RebostHelper.TABLE_RECPING, colings, RebostHelper.COLUMN_RECEPTA + '=' + recid, null, null, null, RebostHelper.COLUMN_INGREDIENT + " DESC");
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
-            Ingredient ing = cursorToIng(cursor);
+            Ingredient ing = getIng(cursor.getLong(0));
             ings.add(ing);
             cursor.moveToNext();
         }
