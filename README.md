@@ -51,3 +51,6 @@ TODO:
 - Fer servir layout de introduir recepta per editar-la i per mostrar-la
 - Mètode suggerir recepta
 - Proves!
+
+01/02
+Ja he fet tota l'activitat per introduïr ingredients a recepta. He posat l'spinner per seleccionar ingredients dins la base de dades, però per afegir-ne de nous he fet una crida a l'activity d'afegir ingredients. He consiguit afegir ingredients a recepta, pero si vull mostrar la llista de receptes crasheija. Deu ser el mètode per mostrar el nom dels ingredietns que s'han acabat. 

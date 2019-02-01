@@ -9,12 +9,13 @@ import android.widget.EditText;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AfegirRecepta extends AppCompatActivity implements View.OnClickListener {
     Button guardar, afegirings;
     EditText ings, textrec, nom;
     private final int REQUEST_CODE = 3;
-    ArrayList<Ingredient> ingredients;
+    ArrayList<Ingredient> ingredients = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +52,14 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
             }
         } else if (v == afegirings) {
             Intent inte = new Intent(this, AfegirIngsARec.class);
-            ArrayList<Integer> ingsids = new ArrayList<>();
-            for(int i = 0; i < ingredients.size(); i++){
-                ingsids.add(new Integer((int)ingredients.get(i).getId()));
+            if(ingredients != null && ingredients.size() > 0) {
+                long[] ingsids = new long[ingredients.size()];
+
+                for (int i = 0; i < ingredients.size(); i++) {
+                    ingsids[i] = (long) ingredients.get(i).getId();
+                }
+                inte.putExtra("ingredients", ingsids);
             }
-            inte.putExtra("ingredients", ingsids);
             startActivityForResult(inte, REQUEST_CODE);
         }
     }
@@ -63,7 +67,11 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
-            ArrayList<Integer> ingsid = data.getExtras().getIntegerArrayList("ingredients");
+            long[] ingsid1 = data.getExtras().getLongArray("ingredients");
+            ArrayList<Long> ingsid = new ArrayList<>();
+            for( int i = 0; i < ingsid1.length; i++){
+                ingsid.add(ingsid1[i]);
+            }
             DataSourceRebost db = new DataSourceRebost(this);
             ingredients.clear();
             try {

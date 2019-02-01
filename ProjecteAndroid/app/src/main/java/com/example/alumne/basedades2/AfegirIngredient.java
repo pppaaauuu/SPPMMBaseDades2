@@ -40,7 +40,7 @@ TextView text;
             }
             if(ing.getId() != 0 && ing.getId() != -1){
                 text.setText("");
-                finish(ing.getNom());
+                finish(ing.getNom(), ing.getId());
             }else{
                 text.setText("No s'ha pogut introduïr");
             }
@@ -48,9 +48,10 @@ TextView text;
 
     }
 
-    public void finish(String s){
+    public void finish(String s, long id){
         Intent data = new Intent();
         data.putExtra("nom", s);
+        data.putExtra("id", id);
         setResult(Activity.RESULT_OK, data);
         super.finish();
     }
