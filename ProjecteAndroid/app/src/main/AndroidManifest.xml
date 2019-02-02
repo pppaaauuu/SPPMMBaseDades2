@@ -12,55 +12,65 @@
         <activity android:name=".AfegirRecepta">
             <intent-filter>
                 <action android:name="com.example.alumne.basedades2.AfegirRecepta" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".LlistaReceptes">
             <intent-filter>
-            <action android:name="com.example.alumne.basedades2.LlistaReceptes" />
-            <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="com.example.alumne.basedades2.LlistaReceptes" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="com.example.alumne.basedades2.MainActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".MenuIngredients">
             <intent-filter>
                 <action android:name="com.example.alumne.basedades2.MenuIngredients" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".MenuReceptes">
             <intent-filter>
                 <action android:name="com.example.alumne.basedades2.MenuReceptes" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".LlistaIngredients">
             <intent-filter>
                 <action android:name="com.example.alumne.basedades2.LlistaIngredients" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".AfegirIngredient">
             <intent-filter>
                 <action android:name="com.example.alumne.basedades2.AfegirIngredient" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".AfegirIngsARec">
             <intent-filter>
                 <action android:name="com.example.alumne.basedades2.AfegirIngsARec" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".MenuCompra"></activity>
     </application>
 
 </manifest>

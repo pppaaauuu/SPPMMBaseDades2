@@ -60,6 +60,7 @@ He seguit una mica i el problema es que al mètode getAllRec() per carregar els 
 Afegida condicio de bàsic que fa que si s'acaba s'apunti automàticament a la llista de la compra.
 He arreglat un bug que feia entrar el cursor en un bucle infinit en llegir els ingredients de les receptes.
 itemClickListener a llista recepta
+Estic fent llista de la compra. Mostra Els ingredients que ha de mostrar, pero els botons no van bé
 TODO:
 - Editar ingredient
 - Que en entrar a afegir ingredient la casella del nom tengui el focus
@@ -69,9 +70,11 @@ TODO:
 - Proves!
 
 Comandes git 
-git clone http://github.com/pppaaauuu/SPPMMBaseDades2
-git add remote classe http://github.com/iespaucasesnoves/base-de-dades-app-pppaaauuu
+git clone https://github.com/pppaaauuu/SPPMMBaseDades2
+git add remote classe https://github.com/iespaucasesnoves/base-de-dades-app-pppaaauuu
 git add *
 git commit -m "Llegir README.md"
 git push origin
+pppaaauuu
 git push classe
+pppaaauuu

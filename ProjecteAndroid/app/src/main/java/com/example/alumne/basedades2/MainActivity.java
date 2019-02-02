@@ -32,8 +32,8 @@ private Button buting, butrec, butcomp, butsort;
             Intent inten = new Intent(this, MenuReceptes.class);
             startActivity(inten);
         }else if(v == butcomp){
-           // Intent inten = new Intent(this, MenuCompra.class);
-            //startActivity(inten);
+            Intent inten = new Intent(this, MenuCompra.class);
+            startActivity(inten);
         }else if(v == butsort){
             this.finish();
         }

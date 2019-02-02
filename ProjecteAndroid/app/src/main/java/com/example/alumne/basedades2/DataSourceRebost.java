@@ -188,4 +188,17 @@ public class DataSourceRebost {
         return ings;
     }
 
+    public ArrayList<Ingredient> getCompra(){
+        ArrayList<Ingredient> ings = new ArrayList<Ingredient>();
+        Cursor cursor = database.query(RebostHelper.TABLE_INGREDIENTS, allColumnsIng, RebostHelper.COLUMN_QUEDAINGREDIENT + "=0", null, null, null, RebostHelper.COLUMN_NOMINGREDIENT + " ASC");
+        cursor.moveToFirst();
+        while(!cursor.isAfterLast()){
+            Ingredient ing = getIng(cursor.getLong(0));
+            ings.add(ing);
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return ings;
+    }
+
 }
