@@ -16,7 +16,26 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imageButton6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_save" />
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/ic_menu_delete" />
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/editText2"
@@ -78,21 +97,12 @@
                 android:layout_height="600dp"
                 android:background="@android:color/background_light"
                 android:ems="10"
+                android:gravity="top"
                 android:inputType="textMultiLine|textLongMessage"
                 android:textAlignment="gravity"
-                android:gravity="top"
                 tools:layout_editor_absoluteX="45dp"
                 tools:layout_editor_absoluteY="443dp" />
 
-            <Button
-                android:id="@+id/button14"
-                android:layout_width="322dp"
-                android:layout_height="76dp"
-                android:layout_marginEnd="44dp"
-                android:layout_marginBottom="40dp"
-                android:text="Guardar Recepta"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
         </LinearLayout>
     </ScrollView>
 

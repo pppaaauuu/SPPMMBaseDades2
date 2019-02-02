@@ -2,6 +2,8 @@ package com.example.alumne.basedades2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -18,6 +20,7 @@ public class LlistaReceptes extends AppCompatActivity {
         setContentView(R.layout.activity_llista_receptes);
         lv = (ListView) findViewById(R.id.listView2);
         mostraRecs();
+
     }
 
     public void mostraRecs() {

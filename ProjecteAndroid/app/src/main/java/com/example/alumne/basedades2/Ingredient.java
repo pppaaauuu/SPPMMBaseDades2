@@ -39,6 +39,9 @@ public class Ingredient {
     }
 
     public void setQueda(boolean queda) {
+        if (isBasic() && queda == false){
+            setCompra(true);
+        }
         this.queda = queda;
     }
 

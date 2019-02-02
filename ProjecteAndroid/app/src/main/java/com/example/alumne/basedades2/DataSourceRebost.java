@@ -71,7 +71,7 @@ public class DataSourceRebost {
 
     public ArrayList<Ingredient> getAllIng(){
         ArrayList<Ingredient> ings = new ArrayList<Ingredient>();
-        Cursor cursor = database.query(RebostHelper.TABLE_INGREDIENTS, allColumnsIng, null, null, null, null, RebostHelper.COLUMN_NOMINGREDIENT + " DESC");
+        Cursor cursor = database.query(RebostHelper.TABLE_INGREDIENTS, allColumnsIng, null, null, null, null, RebostHelper.COLUMN_NOMINGREDIENT + " ASC");
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             Ingredient ing = getIng(cursor.getLong(0));
@@ -99,7 +99,7 @@ public class DataSourceRebost {
     public Recepta createRec(Recepta rec){
         ContentValues values = new ContentValues();
         values.put(RebostHelper.COLUMN_NOMRECEPTA, rec.getNom());
-        values.put(RebostHelper.COLUMN_TEXTRECEPTA, rec.getNom());
+        values.put(RebostHelper.COLUMN_TEXTRECEPTA, rec.getText());
         long insertId = database.insert(RebostHelper.TABLE_RECEPTA,null,values);
         rec.setId(insertId);
         List<Ingredient> ings = rec.getIngredients();
@@ -134,7 +134,7 @@ public class DataSourceRebost {
     public void deleteRec(Recepta rec){
         long id = rec.getId();
         database.delete(RebostHelper.TABLE_RECPING, RebostHelper.COLUMN_RECEPTA + "=" + id, null );
-        database.delete(RebostHelper.TABLE_RECEPTA, RebostHelper.COLUMN_RECEPTA + "=" + id, null );
+        database.delete(RebostHelper.TABLE_RECEPTA, RebostHelper.COLUMN_IDRECEPTA + "=" + id, null );
     }
 
     public Recepta getRec(long id){
@@ -154,7 +154,7 @@ public class DataSourceRebost {
 
     public ArrayList<Recepta> getAllRec(){
         ArrayList<Recepta> recs = new ArrayList<Recepta>();
-        Cursor cursor = database.query(RebostHelper.TABLE_RECEPTA, allColumnsRec, null, null, null, null, RebostHelper.COLUMN_NOMRECEPTA + " DESC");
+        Cursor cursor = database.query(RebostHelper.TABLE_RECEPTA, allColumnsRec, null, null, null, null, RebostHelper.COLUMN_NOMRECEPTA + " ASC");
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             Recepta rec = cursorToRec(cursor);
@@ -167,7 +167,6 @@ public class DataSourceRebost {
 
     private Recepta cursorToRec(Cursor cursor){
         Recepta rec = new Recepta();
-        cursor.moveToPosition(0);
         rec.setId(cursor.getLong(0));
         rec.setNom(cursor.getString(1));
         rec.setText(cursor.getString(2));
@@ -178,7 +177,7 @@ public class DataSourceRebost {
     private ArrayList<Ingredient> getIngsRec(Long recid){
         ArrayList<Ingredient> ings = new ArrayList<Ingredient>();
         String[] colings = {RebostHelper.COLUMN_INGREDIENT};
-        Cursor cursor = database.query(RebostHelper.TABLE_RECPING, colings, RebostHelper.COLUMN_RECEPTA + '=' + recid, null, null, null, RebostHelper.COLUMN_INGREDIENT + " DESC");
+        Cursor cursor = database.query(RebostHelper.TABLE_RECPING, colings, RebostHelper.COLUMN_RECEPTA + '=' + recid, null, null, null, RebostHelper.COLUMN_INGREDIENT + " ASC");
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             Ingredient ing = getIng(cursor.getLong(0));
