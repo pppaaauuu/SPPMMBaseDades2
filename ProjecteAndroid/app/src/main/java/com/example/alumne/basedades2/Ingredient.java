@@ -50,6 +50,10 @@ public class Ingredient {
     }
 
     public void setCompra(boolean compra) {
+
+        this.compra = compra;
+    }
+    public void canviaCompra(boolean compra){
         if(compra == false && !isQueda()){
             setQueda(true);
         }

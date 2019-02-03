@@ -125,9 +125,9 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient>{
     public void compraClick(int pos){
         ing = ingredients.get(pos);
         if (ing.isCompra()) {
-            ing.setCompra(false);
+            ing.canviaCompra(false);
         } else {
-            ing.setCompra(true);
+            ing.canviaCompra(true);
         }
         DataSourceRebost dsr = new DataSourceRebost(context);
         boolean upd = false;

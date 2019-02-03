@@ -96,6 +96,9 @@ Arreglat que quan suggereix recepta el titol agafa focus i el teclat tapa el tex
 Si es lleva un ingredient de la llista de la compra, pos que en queda automàticament
 Que es llevin els items de la llista de la compra (Para ra ho faig amb un ontouchlistener a la listview, que no colisiona amb el click de l'item, pero no s'activa en clicakr l'item sino en tocar la llista despres)
 
+Després d'entregar apk: 
+- corregit bug que fa que no es quedi guardat l'estat de queda en ingredients. Es per la regla de si es lleven de la llista de la compra es posi que en queden. L'aplica quan crea els objectes des de la base de dades. He de desdoblar el setter. Un per carregar, l'altre per canviar d'estar desde l'interficie. 
+
 Per versions posteriors:
 - Boto actualitzar o guardar la BD en xml o altre format 
 - Afegir camps a la BD: imatges de recepta, temps de preparacio, darrera vegada cuinada (+ tota la lògica per registrar-ho i fer-ho servir a suggerències)
