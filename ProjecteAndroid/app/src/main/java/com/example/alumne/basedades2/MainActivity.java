@@ -89,12 +89,14 @@ private Button sortir;
                 }
             }
         }
-        if(recs != null){
+        if(recs != null && recs.size() > 0){
             Random random = new Random();
             int index = random.nextInt(recs.size());
             long id = recs.get(index).getId();
             inten.putExtra("recepta", id);
             startActivity(inten);
+        }else{
+            Toast.makeText(this, "No hi ha ingredients com per suggerir receptes", Toast.LENGTH_LONG).show();
         }
     }
 }

@@ -49,6 +49,7 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
                 nom.setText(rec.getNom());
                 textrec.setText(rec.getText());
                 ingredients = rec.getIngredients();
+                ings.setText("");
                 for (int i = 0; i < ingredients.size(); i++) {
                    ings.setText(ings.getText() + ingredients.get(i).getNom() + ", ");
                 }
@@ -139,6 +140,7 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
             ingredients.clear();
             try {
                 db.open();
+                ings.setText("");
                 for (int i = 0; i < ingsid.size(); i++) {
                     ingredients.add(db.getIng(ingsid.get(i)));
                     ings.setText(ings.getText() + ingredients.get(i).getNom() + ", ");

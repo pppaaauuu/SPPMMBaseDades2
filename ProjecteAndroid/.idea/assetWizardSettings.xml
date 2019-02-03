@@ -61,9 +61,9 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="C:\Users\HP\Desktop\Nueva carpeta\SPPMMBaseDades2\ProjecteAndroid\512px-Shopping_cart_font_awesome.svg.png" />
-                                      <entry key="foregroundLayerName" value="ic_cart_lay" />
-                                      <entry key="outputName" value="ic_cart" />
+                                      <entry key="foregroundImage" value="C:\Users\HP\Desktop\Nueva carpeta\SPPMMBaseDades2\ProjecteAndroid\kitchen-1745688_960_720.png" />
+                                      <entry key="foregroundLayerName" value="ico_kitch_lay" />
+                                      <entry key="outputName" value="ico_kitchen" />
                                     </map>
                                   </option>
                                 </PersistentState>

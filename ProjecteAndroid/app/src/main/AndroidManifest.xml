@@ -4,9 +4,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ico_kitchen"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ico_kitchen_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Settings"></activity>
@@ -37,20 +37,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuIngredients">
-            <intent-filter>
-                <action android:name="com.example.alumne.basedades2.MenuIngredients" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".MenuReceptes">
-            <intent-filter>
-                <action android:name="com.example.alumne.basedades2.MenuReceptes" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity android:name=".LlistaIngredients">
             <intent-filter>
                 <action android:name="com.example.alumne.basedades2.LlistaIngredients" />
