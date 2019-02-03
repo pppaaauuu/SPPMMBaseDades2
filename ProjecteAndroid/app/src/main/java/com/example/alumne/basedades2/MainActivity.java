@@ -21,7 +21,7 @@ private Button sortir;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         llisting = (ImageButton) findViewById(R.id.imageButton12);
-        llistrec = (ImageButton) findViewById(R.id.imageButton13);
+        llistrec = (ImageButton) findViewById(R.id.imageButton18);
         afing = (ImageButton) findViewById(R.id.imageButton14);
         afrec = (ImageButton) findViewById(R.id.imageButton15);
         butcomp = (ImageButton) findViewById(R.id.imageButton17);

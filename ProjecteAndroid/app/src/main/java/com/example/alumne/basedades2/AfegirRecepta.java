@@ -81,6 +81,7 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
             }else{
                 rec.setText(textrec.getText().toString());
                 rec.setIngredients(ingredients);
+                rec.setNom(nom.getText().toString());
                 DataSourceRebost db = new DataSourceRebost(this);
                 try {
                     db.open();
