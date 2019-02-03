@@ -81,11 +81,19 @@ fet info i settings
 fet que el nom de recepta o ingredient es seleccioni sencer en clickarhi
 fet suggerir recepta
 fet delete db a settings
-
+Foto carrito https://commons.wikimedia.org/wiki/File:Shopping_cart_font_awesome.svg
 TODO:
 
 - Que en clickar a recepta s'obri afegir recepte pero sense permetre edicio, que això s'habiliti amb un botó¨(Quan suggereix recepta el titol agafa focus i el teclat tapa el text)
 - Boto actualitzar o guardar la BD en xml o altre format 
+- Arreglar bug que fa que es pengui si no hi ha receptes per suggerir
+- En afegir ings a rec concatena els noms malament
+- En agafar un ing del combobox esborra els introduits com nous ings
+- Que es llevin els items de la llista de la compra
+- Afegir camps a la BD: imatges de recepta, temps de preparacio, darrera vegada cuinada (+ tota la lògica per registrar-ho)
+- Fer classes d0ingredients per permetre receptes com pasta bolonyesa i que accepti macarrons i spaghettis
+- Ficar el text d'info a un scrollview
+- Refer interficie en un sol menu
 - Icones
 - Gràfics
 - Proves!
