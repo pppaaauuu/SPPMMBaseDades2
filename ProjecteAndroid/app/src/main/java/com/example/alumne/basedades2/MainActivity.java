@@ -72,27 +72,29 @@ private Button sortir;
 
     public void suggerirRecepta(){
         Intent inten = new Intent(this, AfegirRecepta.class);
-        ArrayList<Recepta> recs = new ArrayList<>();
+        ArrayList<Recepta> recs2 = new ArrayList<>();
         DataSourceRebost db = new DataSourceRebost (this);
         try{
             db.open();
-            recs = db.getAllRec();
+            recs2 = db.getAllRec();
             db.close();
         }catch(SQLException e){
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
-        for(int i = 0; i < recs.size(); i++){
-            ArrayList<Ingredient> ings = recs.get(i).getIngredients();
+        for(int i = 0; i < recs2.size(); i++){
+            ArrayList<Ingredient> ings = recs2.get(i).getIngredients();
             for(int j = 0; j < ings.size(); j++){
                 if(!ings.get(j).isQueda()){
-                    recs.remove(i);
+                    recs2.remove(i);
+                    i--;
+                    break;
                 }
             }
         }
-        if(recs != null && recs.size() > 0){
-            Random random = new Random();
-            int index = random.nextInt(recs.size());
-            long id = recs.get(index).getId();
+        if(recs2 != null && recs2.size() > 0){
+            Random r = new Random();
+            int index1 = r.nextInt(recs2.size());
+            long id = recs2.get(index1).getId();
             inten.putExtra("recepta", id);
             startActivity(inten);
         }else{
