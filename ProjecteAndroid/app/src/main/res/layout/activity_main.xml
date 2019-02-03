@@ -6,215 +6,244 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:id="@+id/imageButton15"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton13"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton14"
-        app:srcCompat="@android:drawable/ic_input_add" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Afegir"
-        app:layout_constraintStart_toStartOf="@+id/imageButton15"
-        app:layout_constraintTop_toTopOf="@+id/imageButton15" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <ImageButton
-        android:id="@+id/imageButton14"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton12"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="70dp"
-        android:text="Receptes"
-        app:layout_constraintStart_toStartOf="@+id/imageButton15"
-        app:layout_constraintTop_toTopOf="@+id/imageButton15" />
+                <ImageButton
+                    android:id="@+id/imageButton13"
+                    android:layout_width="105dp"
+                    android:layout_height="107dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton12"
+                    app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="70dp"
-        android:text="Ingredients"
-        app:layout_constraintStart_toStartOf="@+id/imageButton14"
-        app:layout_constraintTop_toTopOf="@+id/imageButton14" />
+                <ImageButton
+                    android:id="@+id/imageButton15"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintStart_toEndOf="@+id/imageButton18"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton14"
+                    app:srcCompat="@android:drawable/ic_input_add" />
 
-    <ImageButton
-        android:id="@+id/imageButton13"
-        android:layout_width="105dp"
-        android:layout_height="107dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton12"
-        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+                <ImageButton
+                    android:id="@+id/imageButton14"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintStart_toEndOf="@+id/imageButton12"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:drawable/ic_input_add" />
 
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Llista"
-        app:layout_constraintStart_toStartOf="@+id/imageButton13"
-        app:layout_constraintTop_toTopOf="@+id/imageButton13" />
+                <ImageButton
+                    android:id="@+id/imageButton18"
+                    android:layout_width="105dp"
+                    android:layout_height="107dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton12"
+                    app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="70dp"
-        android:text="Receptes"
-        app:layout_constraintStart_toStartOf="@+id/imageButton13"
-        app:layout_constraintTop_toTopOf="@+id/imageButton13" />
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Llista"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton18"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton18" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton16"
-        app:srcCompat="@android:drawable/ic_dialog_info" />
+                <ImageButton
+                    android:id="@+id/imageButton12"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
 
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton17"
-        app:srcCompat="@android:drawable/ic_menu_manage" />
+                <ImageButton
+                    android:id="@+id/imageButton16"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton18"
+                    app:srcCompat="@android:drawable/btn_star_big_on" />
 
-    <ImageButton
-        android:id="@+id/imageButton12"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Llista"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton12"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton12" />
 
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="60dp"
-        android:text="Ingredients"
-        app:layout_constraintStart_toStartOf="@+id/imageButton12"
-        app:layout_constraintTop_toTopOf="@+id/imageButton12" />
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="70dp"
+                    android:text="Receptes"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton18"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton18" />
 
-    <ImageButton
-        android:id="@+id/imageButton16"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton13"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+                <TextView
+                    android:id="@+id/textView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="70dp"
+                    android:text="Ingredients"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton14"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton14" />
 
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Suggerir"
-        app:layout_constraintStart_toStartOf="@+id/imageButton16"
-        app:layout_constraintTop_toTopOf="@+id/imageButton16" />
+                <ImageButton
+                    android:id="@+id/imageButton17"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:cropToPadding="false"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintStart_toEndOf="@+id/imageButton16"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton15"
+                    app:srcCompat="@mipmap/ic_cart_lay" />
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="70dp"
-        android:text="Recepta"
-        app:layout_constraintStart_toStartOf="@+id/imageButton16"
-        app:layout_constraintTop_toTopOf="@+id/imageButton16" />
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Afegir"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton15"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton15" />
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Llista"
-        app:layout_constraintStart_toStartOf="@+id/imageButton12"
-        app:layout_constraintTop_toTopOf="@+id/imageButton12" />
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/imageButton3"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton17"
+                    app:srcCompat="@android:drawable/ic_menu_manage" />
 
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:text="Afegir"
-        app:layout_constraintStart_toStartOf="@+id/imageButton14"
-        app:layout_constraintTop_toTopOf="@+id/imageButton14" />
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Afegir"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton14"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton14" />
 
-    <ImageButton
-        android:id="@+id/imageButton17"
-        android:layout_width="105dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:cropToPadding="false"
-        android:scaleType="centerInside"
-        app:layout_constraintStart_toEndOf="@+id/imageButton16"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15"
-        app:srcCompat="@mipmap/ic_cart_lay" />
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="229dp"
+                    android:layout_height="68dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Sortir"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="229dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Sortir"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="70dp"
+                    android:text="Receptes"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton15"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton15" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="60dp"
+                    android:text="Ingredients"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton12"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton12" />
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton16"
+                    app:srcCompat="@android:drawable/ic_dialog_info" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Suggerir"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton16"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton16" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="70dp"
+                    android:text="Recepta"
+                    app:layout_constraintStart_toStartOf="@+id/imageButton16"
+                    app:layout_constraintTop_toTopOf="@+id/imageButton16" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

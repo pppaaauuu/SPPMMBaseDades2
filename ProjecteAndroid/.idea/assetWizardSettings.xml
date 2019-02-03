@@ -51,6 +51,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+                                                <entry key="scalingPercent" value="57" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -60,10 +61,12 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="C:\Users\HP\Desktop\Nueva carpeta\SPPMMBaseDades2\ProjecteAndroid\kitchen-1745688_960_720.png" />
-                                      <entry key="foregroundLayerName" value="ico_kitch_lay" />
-                                      <entry key="outputName" value="ico_kitchen" />
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="fafff4" />
+                                      <entry key="backgroundLayerName" value="ic_web_background" />
+                                      <entry key="foregroundImage" value="C:\Users\HP\Desktop\Nueva carpeta\SPPMMBaseDades2\ProjecteAndroid\www.png" />
+                                      <entry key="foregroundLayerName" value="ico_web_lay" />
+                                      <entry key="outputName" value="ico_web" />
                                     </map>
                                   </option>
                                 </PersistentState>

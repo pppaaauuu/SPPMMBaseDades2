@@ -88,18 +88,16 @@ imatge icona https://pixabay.com/es/cocina-estufa-horno-1745688/
 Arreglat bug que fa que es pengui si no hi ha receptes per suggerir
 fetes Icones
 Ficat el text d'info a un scrollview
-Arreglat que n afegir ings a rec concatena els noms malament
+Arreglat que en afegir ings a rec concatena els noms malament
+En agafar un ing del combobox esborra els introduits com nous ings (no he pogut reproduir aquest error)
+Refeta interficie en un sol menú
+Arreglat que quan suggereix recepta el titol agafa focus i el teclat tapa el text
+
 TODO:
-
-- Que en clickar a recepta s'obri afegir recepte pero sense permetre edicio, que això s'habiliti amb un botó¨(Quan suggereix recepta el titol agafa focus i el teclat tapa el text)
 - Boto actualitzar o guardar la BD en xml o altre format 
-
-- En agafar un ing del combobox esborra els introduits com nous ings (no he pogut reproduir aquest error)
-- Que es llevin els items de la llista de la compra
+- Que es llevin els items de la llista de la compra (Para ra ho faig amb un ontouchlistener a la listview, que no colisiona amb el click de l'item, pero no s'activa en clicakr l'item sino en tocar la llista despres)
 - Afegir camps a la BD: imatges de recepta, temps de preparacio, darrera vegada cuinada (+ tota la lògica per registrar-ho)
-- Fer classes d0ingredients per permetre receptes com pasta bolonyesa i que accepti macarrons i spaghettis
-- Refer interficie en un sol menu
-- Gràfics
+- Fer classes d'ingredients per permetre receptes com pasta bolonyesa i que accepti macarrons i spaghettis
 - Proves!
 
 
