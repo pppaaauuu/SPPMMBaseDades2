@@ -47,11 +47,14 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Recepta"
+                android:selectAllOnFocus="true"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="96dp"
+                android:layout_marginLeft="30dp" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -62,7 +65,7 @@
             <EditText
                 android:id="@+id/editText4"
                 android:layout_width="378dp"
-                android:layout_height="112dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="23dp"
                 android:layout_marginBottom="2dp"
@@ -71,7 +74,8 @@
                 android:inputType="textMultiLine"
                 app:layout_constraintBottom_toTopOf="@+id/scrollView2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button13" />
+                app:layout_constraintTop_toBottomOf="@+id/button13"
+                android:layout_marginLeft="16dp" />
 
             <Button
                 android:id="@+id/button13"
@@ -83,7 +87,9 @@
                 android:text="Seleccionar Ingredients"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+                app:layout_constraintTop_toBottomOf="@+id/editText2"
+                android:layout_marginLeft="45dp"
+                android:layout_marginRight="83dp" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -94,11 +100,12 @@
             <EditText
                 android:id="@+id/editText5"
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
+                android:layout_height="wrap_content"
                 android:background="@android:color/background_light"
                 android:ems="10"
                 android:gravity="top"
                 android:inputType="textMultiLine|textLongMessage"
+                android:minHeight="200dp"
                 android:textAlignment="gravity"
                 tools:layout_editor_absoluteX="45dp"
                 tools:layout_editor_absoluteY="443dp" />

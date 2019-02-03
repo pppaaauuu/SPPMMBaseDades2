@@ -2,6 +2,7 @@ package com.example.alumne.basedades2;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,21 +41,7 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient>{
         queda = (ImageView) view.findViewById(R.id.imageView2);
         compra = (ImageView) view.findViewById(R.id.imageView3);
         nom.setText(ing.getNom());
-        if(ing.isBasic()){
-            bas.setImageResource(android.R.drawable.presence_online);
-        }else{
-            bas.setImageResource(android.R.drawable.presence_busy);
-        }
-        if(ing.isQueda()){
-            queda.setImageResource(android.R.drawable.presence_online);
-        }else{
-            queda.setImageResource(android.R.drawable.presence_busy);
-        }
-        if(ing.isCompra()){
-            compra.setImageResource(android.R.drawable.presence_online);
-        }else{
-            compra.setImageResource(android.R.drawable.presence_busy);
-        }
+        repintar();
         bas.setOnClickListener(new android.widget.TextView.OnClickListener() {
             @Override
             public void onClick (View v) {
@@ -70,10 +57,31 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient>{
             public void onClick (View v) {
                 compraClick(position);
             }});
+        nom.setOnClickListener(new android.widget.TextView.OnClickListener(){
+                @Override
+        public void onClick (View v) {
+            nomClick(position);
+        }});
         return view;
     }
 
-
+    public void repintar(){
+        if(ing.isBasic()){
+            bas.setImageResource(android.R.drawable.presence_online);
+        }else{
+            bas.setImageResource(android.R.drawable.presence_busy);
+        }
+        if(ing.isQueda()){
+            queda.setImageResource(android.R.drawable.presence_online);
+        }else{
+            queda.setImageResource(android.R.drawable.presence_busy);
+        }
+        if(ing.isCompra()){
+            compra.setImageResource(android.R.drawable.presence_online);
+        }else{
+            compra.setImageResource(android.R.drawable.presence_busy);
+        }
+    }
     public void basicClick(int pos){
         ing = ingredients.get(pos);
         if (ing.isBasic()) {
@@ -119,7 +127,7 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient>{
         if (ing.isCompra()) {
             ing.setCompra(false);
         } else {
-            ing.setQueda(true);
+            ing.setCompra(true);
         }
         DataSourceRebost dsr = new DataSourceRebost(context);
         boolean upd = false;
@@ -131,6 +139,15 @@ public class IngredientArrayAdapter extends ArrayAdapter<Ingredient>{
         if (!upd) {
             Toast.makeText(context, "No s'ha actualitzat ingredient", Toast.LENGTH_LONG).show();
         }
+        this.notifyDataSetChanged();
+        repintar();
+    }
+
+    public void nomClick(int pos){
+        Intent inten = new Intent(context, AfegirIngredient.class);
+        long id = ingredients.get(pos).getId();
+        inten.putExtra("ingredient", id);
+        context.startActivity(inten);
         this.notifyDataSetChanged();
     }
 

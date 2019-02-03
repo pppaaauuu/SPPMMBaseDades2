@@ -1,10 +1,16 @@
 package com.example.alumne.basedades2;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Random;
 
 
 public class MenuReceptes extends AppCompatActivity implements View.OnClickListener{
@@ -32,10 +38,40 @@ public class MenuReceptes extends AppCompatActivity implements View.OnClickListe
             Intent inten = new Intent(this, AfegirRecepta.class);
             startActivityForResult(inten, REQUEST_CODE);
         }else if(v == butsuggerir){
-         //   Intent inten = new Intent(this, SuggerirRecepta.class);
-         //   startActivity(inten);
+            suggerirRecepta();
+
+
+
         }else if(v == butsortir){
            finish();
+        }
+    }
+
+    public void suggerirRecepta(){
+        Intent inten = new Intent(this, AfegirRecepta.class);
+        ArrayList<Recepta> recs = new ArrayList<>();
+        DataSourceRebost db = new DataSourceRebost (this);
+        try{
+            db.open();
+            recs = db.getAllRec();
+            db.close();
+        }catch(SQLException e){
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
+        }
+        for(int i = 0; i < recs.size(); i++){
+            ArrayList<Ingredient> ings = recs.get(i).getIngredients();
+            for(int j = 0; j < ings.size(); j++){
+                if(!ings.get(j).isQueda()){
+                    recs.remove(i);
+                }
+            }
+        }
+        if(recs != null){
+            Random random = new Random();
+            int index = random.nextInt(recs.size());
+            long id = recs.get(index).getId();
+            inten.putExtra("recepta", id);
+            startActivity(inten);
         }
     }
 }

@@ -67,8 +67,35 @@ TODO:
 - Llista compra
 - Mètode suggerir recepta
 - Boto conf a menu principal per borra, actualitzar o guardar la BD en xml o altre format 
+- Icones
+- Gràfics
 - Proves!
 
+3/2
+Corregit error a ingredient arrayadapter que feia que en canviar compra se canvies queda.
+corregir error a la query per fer la llista de la compra, que mirava el boolea queda enlloc de compra datasourcererost getLlistaCompra()
+Fet editar ingredient
+He estat ajustat els layouts perque faig proves amb el meu mòbil. Té apk 17! he hagut de baixar sdk i baixar el mínim del projecte per poder-ho fer servir
+Estic intentant fer que a llista compra quan es canvia compra a false, desaparegui l'item, però això crec que necessita listeners a dos nivells, no se si es podrà fer tal com està
+fet info i settings
+fet que el nom de recepta o ingredient es seleccioni sencer en clickarhi
+fet suggerir recepta
+fet delete db a settings
+
+TODO:
+
+- Que en clickar a recepta s'obri afegir recepte pero sense permetre edicio, que això s'habiliti amb un botó¨(Quan suggereix recepta el titol agafa focus i el teclat tapa el text)
+- Boto actualitzar o guardar la BD en xml o altre format 
+- Icones
+- Gràfics
+- Proves!
+
+
+
+
+
+
+_______________________________________________________________________________________________________________
 Comandes git 
 git clone https://github.com/pppaaauuu/SPPMMBaseDades2
 git add remote classe https://github.com/iespaucasesnoves/base-de-dades-app-pppaaauuu

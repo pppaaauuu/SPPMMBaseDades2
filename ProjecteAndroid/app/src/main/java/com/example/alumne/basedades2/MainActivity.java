@@ -5,9 +5,11 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 private Button buting, butrec, butcomp, butsort;
+private ImageButton info, settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +19,14 @@ private Button buting, butrec, butcomp, butsort;
         butrec = (Button) findViewById(R.id.button2);
         butcomp = (Button) findViewById(R.id.button3);
         butsort = (Button) findViewById(R.id.button4);
-
+        info = findViewById(R.id.imageButton3);
+        settings = findViewById(R.id.imageButton4);
         buting.setOnClickListener(this);
         butrec.setOnClickListener(this);
         butcomp.setOnClickListener(this);
         butsort.setOnClickListener(this);
+        settings.setOnClickListener(this);
+        info.setOnClickListener(this);
     }
 
     public void onClick(View v){
@@ -34,8 +39,17 @@ private Button buting, butrec, butcomp, butsort;
         }else if(v == butcomp){
             Intent inten = new Intent(this, MenuCompra.class);
             startActivity(inten);
+        }else if(v == butcomp){
+            Intent inten = new Intent(this, MenuCompra.class);
+            startActivity(inten);
         }else if(v == butsort){
             this.finish();
+        }else if(v == info){
+            Intent inten = new Intent(this, Info.class);
+            startActivity(inten);
+        }else if(v == settings){
+            Intent inten = new Intent(this, Settings.class);
+            startActivity(inten);
         }
     }
 }

@@ -25,7 +25,7 @@ public class MenuCompra extends AppCompatActivity {
         DataSourceRebost dataSource = new DataSourceRebost(this);
         try {
             dataSource.open();
-            llistaingredients = dataSource.getCompra();
+            llistaingredients = dataSource.getLlistaCompra();
             ArrayAdapter<Ingredient> adap = new IngredientArrayAdapter(this, R.layout.ingredient_a_llista, llistaingredients);
             lv.setAdapter(adap);
             dataSource.close();

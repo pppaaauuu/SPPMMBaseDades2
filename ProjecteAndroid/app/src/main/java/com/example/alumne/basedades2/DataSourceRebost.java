@@ -188,9 +188,9 @@ public class DataSourceRebost {
         return ings;
     }
 
-    public ArrayList<Ingredient> getCompra(){
+    public ArrayList<Ingredient> getLlistaCompra(){
         ArrayList<Ingredient> ings = new ArrayList<Ingredient>();
-        Cursor cursor = database.query(RebostHelper.TABLE_INGREDIENTS, allColumnsIng, RebostHelper.COLUMN_QUEDAINGREDIENT + "=0", null, null, null, RebostHelper.COLUMN_NOMINGREDIENT + " ASC");
+        Cursor cursor = database.query(RebostHelper.TABLE_INGREDIENTS, allColumnsIng, RebostHelper.COLUMN_COMPRAINGREDIENT + "=1", null, null, null, RebostHelper.COLUMN_NOMINGREDIENT + " ASC");
         cursor.moveToFirst();
         while(!cursor.isAfterLast()){
             Ingredient ing = getIng(cursor.getLong(0));
@@ -199,6 +199,12 @@ public class DataSourceRebost {
         }
         cursor.close();
         return ings;
+    }
+
+    public void deleteDb(){
+        database.execSQL("delete from "+ RebostHelper.TABLE_RECEPTA);
+        database.execSQL("delete from "+ RebostHelper.TABLE_INGREDIENTS);
+        database.execSQL("delete from "+ RebostHelper.TABLE_RECPING);
     }
 
 }
