@@ -84,6 +84,7 @@ fet delete db a settings
 Foto carrito https://commons.wikimedia.org/wiki/File:Shopping_cart_font_awesome.svg
 imatge icona https://pixabay.com/es/cocina-estufa-horno-1745688/
 -- https://pixabay.com/es/cocina-muebles-casa-dise%C3%B1o-2988766/
+imatge icona web https://pixabay.com/es/www-icono-sitio-web-mundo-web-1632431/
 
 Arreglat bug que fa que es pengui si no hi ha receptes per suggerir
 fetes Icones
@@ -92,13 +93,14 @@ Arreglat que en afegir ings a rec concatena els noms malament
 En agafar un ing del combobox esborra els introduits com nous ings (no he pogut reproduir aquest error)
 Refeta interficie en un sol menú
 Arreglat que quan suggereix recepta el titol agafa focus i el teclat tapa el text
+Si es lleva un ingredient de la llista de la compra, pos que en queda automàticament
+Que es llevin els items de la llista de la compra (Para ra ho faig amb un ontouchlistener a la listview, que no colisiona amb el click de l'item, pero no s'activa en clicakr l'item sino en tocar la llista despres)
 
-TODO:
+Per versions posteriors:
 - Boto actualitzar o guardar la BD en xml o altre format 
-- Que es llevin els items de la llista de la compra (Para ra ho faig amb un ontouchlistener a la listview, que no colisiona amb el click de l'item, pero no s'activa en clicakr l'item sino en tocar la llista despres)
-- Afegir camps a la BD: imatges de recepta, temps de preparacio, darrera vegada cuinada (+ tota la lògica per registrar-ho)
+- Afegir camps a la BD: imatges de recepta, temps de preparacio, darrera vegada cuinada (+ tota la lògica per registrar-ho i fer-ho servir a suggerències)
 - Fer classes d'ingredients per permetre receptes com pasta bolonyesa i que accepti macarrons i spaghettis
-- Proves!
+
 
 
 
