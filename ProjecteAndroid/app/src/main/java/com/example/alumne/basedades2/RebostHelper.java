@@ -7,6 +7,7 @@ import android.util.Log;
 
 public class RebostHelper extends SQLiteOpenHelper {
 
+    public static final String DIRECTORIFOTOS = "ImatgesReceptes";
     public static final String TABLE_INGREDIENTS = "ingredients";
     public static final String COLUMN_IDINGREDIENT = "id";
     public static final String COLUMN_NOMINGREDIENT = "nom";

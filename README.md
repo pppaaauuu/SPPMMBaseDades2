@@ -110,6 +110,8 @@ Per versions posteriors:
 10/02
 Me pos a corregir bugs que deixen llista compra atrancada i crash quan s'elimina un ingredient o recepta nou.
 Arrgelats els dos problemes. Per corregir el primer, he llevat el ontouchlistener que actualitzava la llista en tocar-la.
+He començat a fer les classes per afegir les imatges. Després ampliaré la BD amb això i les altres coses.
+Me qued que he de començar el layout de capturar imatges (activity_captura_foto).
 
 
 
