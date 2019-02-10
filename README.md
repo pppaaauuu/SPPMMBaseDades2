@@ -98,6 +98,7 @@ Que es llevin els items de la llista de la compra (Para ra ho faig amb un ontouc
 
 Després d'entregar apk: 
 - corregit bug que fa que no es quedi guardat l'estat de queda en ingredients. Es per la regla de si es lleven de la llista de la compra es posi que en queden. L'aplica quan crea els objectes des de la base de dades. He de desdoblar el setter. Un per carregar, l'altre per canviar d'estar desde l'interficie. 
+- bug a suggerir receptes
 
 Per versions posteriors:
 - Boto actualitzar o guardar la BD en xml o altre format 
@@ -106,7 +107,9 @@ Per versions posteriors:
 
 
 
-
+10/02
+Me pos a corregir bugs que deixen llista compra atrancada i crash quan s'elimina un ingredient o recepta nou.
+Arrgelats els dos problemes. Per corregir el primer, he llevat el ontouchlistener que actualitzava la llista en tocar-la.
 
 
 

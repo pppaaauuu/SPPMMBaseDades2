@@ -85,26 +85,30 @@ Ingredient ing;
                     Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
-        }else if(v == delete){
-            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    switch (which){
-                        case DialogInterface.BUTTON_POSITIVE:
-                            esborrar();
-                            break;
+        }else if(v == delete) {
+            if (ing != null) {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case DialogInterface.BUTTON_POSITIVE:
+                                esborrar();
+                                break;
 
-                        case DialogInterface.BUTTON_NEGATIVE:
+                            case DialogInterface.BUTTON_NEGATIVE:
 
-                            break;
+                                break;
+                        }
                     }
-                }
-            };
+                };
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Estàs segur de voler borrar l'ingredient?").setPositiveButton("Si", dialogClickListener)
-                    .setNegativeButton("No", dialogClickListener).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("Estàs segur de voler borrar l'ingredient?").setPositiveButton("Si", dialogClickListener)
+                        .setNegativeButton("No", dialogClickListener).show();
 
+            }else{
+                Toast.makeText(this, "No estava a la base de dades", Toast.LENGTH_LONG).show();
+            }
         }
 
     }

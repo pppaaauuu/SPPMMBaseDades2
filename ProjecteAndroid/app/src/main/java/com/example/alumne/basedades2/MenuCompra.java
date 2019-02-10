@@ -23,13 +23,13 @@ public class MenuCompra extends AppCompatActivity {
         setContentView(R.layout.activity_llista_ingredients);
         lv = (ListView) findViewById(R.id.listView);
         mostraIngs();
-        lv.setOnTouchListener(new View.OnTouchListener() {
+        /*lv.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 mostraIngs();
                 return false;
             }
-        });
+        });*/
     }
 
     public void mostraIngs() {

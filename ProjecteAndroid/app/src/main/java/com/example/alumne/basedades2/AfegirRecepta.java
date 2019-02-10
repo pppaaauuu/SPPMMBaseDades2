@@ -62,7 +62,7 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
 
     public void onClick(View v) {
         if (v == guardar) {
-            if(rec == null) {
+            if (rec == null) {
                 rec = new Recepta(nom.getText().toString());
 
                 rec.setText(textrec.getText().toString());
@@ -78,7 +78,7 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
                 if (rec.getId() > 0) {
                     finish();
                 }
-            }else{
+            } else {
                 rec.setText(textrec.getText().toString());
                 rec.setIngredients(ingredients);
                 rec.setNom(nom.getText().toString());
@@ -87,9 +87,9 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
                     db.open();
                     boolean i = db.updateRec(rec);
                     db.close();
-                    if(i){
+                    if (i) {
                         finish();
-                    }else{
+                    } else {
                         Toast.makeText(this, "No s'ha pogut actualitzar. Error a la BD", Toast.LENGTH_LONG).show();
                     }
                 } catch (SQLException e) {
@@ -98,7 +98,7 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
             }
         } else if (v == afegirings) {
             Intent inte = new Intent(this, AfegirIngsARec.class);
-            if(ingredients != null && ingredients.size() > 0) {
+            if (ingredients != null && ingredients.size() > 0) {
                 long[] ingsids = new long[ingredients.size()];
 
                 for (int i = 0; i < ingredients.size(); i++) {
@@ -107,26 +107,34 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
                 inte.putExtra("ingredients", ingsids);
             }
             startActivityForResult(inte, REQUEST_CODE);
-        }else if(v == delete){
-            DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    switch (which){
-                        case DialogInterface.BUTTON_POSITIVE:
-                            esborrar();
-                            break;
+        } else if (v == delete) {
+            if (rec != null) {
+                DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case DialogInterface.BUTTON_POSITIVE:
+                                esborrar();
+                                break;
 
-                        case DialogInterface.BUTTON_NEGATIVE:
+                            case DialogInterface.BUTTON_NEGATIVE:
 
-                            break;
+                                break;
+                        }
                     }
-                }
-            };
+                };
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Estàs segur de voler borrar la recepta?").setPositiveButton("Si", dialogClickListener)
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("Estàs segur de voler borrar la recepta?").setPositiveButton("Si", dialogClickListener)
                     .setNegativeButton("No", dialogClickListener).show();
+            }else {
+                Toast.makeText(this, "No estava a la BD", Toast.LENGTH_LONG).show();
+            }
+
         }
+
+
     }
 
     @Override
