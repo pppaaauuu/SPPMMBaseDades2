@@ -55,7 +55,7 @@ public class ImatgeRecepta {
         }
         return true;
     }
-    public static Bitmap agafaImatgeVi(long id) {
+    public static Bitmap agafaImatge(long id) {
         String nomimatge="img_"+id+".jpg";
         Bitmap res=null;
         Bitmap reduit=null;

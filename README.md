@@ -113,6 +113,9 @@ Arrgelats els dos problemes. Per corregir el primer, he llevat el ontouchlistene
 He començat a fer les classes per afegir les imatges. Després ampliaré la BD amb això i les altres coses.
 Me qued que he de començar el layout de capturar imatges (activity_captura_foto).
 
+12/02
+He afegit el´layout capturar imatges i he adaptat el codi de l'activitat de SPPMM.
+Guarda a la SD una imatge per rec identificantla amb la id de la recepta
 
 
 _______________________________________________________________________________________________________________

@@ -17,10 +17,11 @@ import java.util.List;
 
 public class AfegirRecepta extends AppCompatActivity implements View.OnClickListener {
     Button afegirings ;
-    ImageButton guardar, delete;
+    ImageButton guardar, delete, imatge;
     EditText ings, textrec, nom;
     Recepta rec;
     private final int REQUEST_CODE = 3;
+    private final int REQUEST_CODE2 = 6;
     ArrayList<Ingredient> ingredients = new ArrayList<>();
 
     @Override
@@ -29,6 +30,7 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_afegir_recepta);
         guardar = (ImageButton) findViewById(R.id.imageButton6);
         delete = (ImageButton) findViewById(R.id.imageButton5);
+        imatge = (ImageButton) findViewById(R.id.imageButton25);
         afegirings = (Button) findViewById(R.id.button13);
         ings = (EditText) findViewById(R.id.editText4);
         textrec = (EditText) findViewById(R.id.editText5);
@@ -36,6 +38,7 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
         ings.setFocusable(false);
         guardar.setOnClickListener(this);
         delete.setOnClickListener(this);
+        imatge.setOnClickListener(this);
         afegirings.setOnClickListener(this);
         Bundle extras = getIntent().getExtras();
 
@@ -132,6 +135,14 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(this, "No estava a la BD", Toast.LENGTH_LONG).show();
             }
 
+        }if (v == imatge){
+            if(rec.getId() > 0) {
+                Intent inte = new Intent(this, CapturaImatge.class);
+                inte.putExtra("ID", rec.getId());
+                startActivityForResult(inte, REQUEST_CODE2);
+            }else{
+                Toast.makeText(this, "Guarda primer la recepta", Toast.LENGTH_LONG).show();
+            }
         }
 
 
@@ -158,6 +169,9 @@ public class AfegirRecepta extends AppCompatActivity implements View.OnClickList
             } catch (SQLException e) {
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
             }
+
+        }else  if (resultCode == RESULT_OK && requestCode == REQUEST_CODE2) {
+
 
         }
     }

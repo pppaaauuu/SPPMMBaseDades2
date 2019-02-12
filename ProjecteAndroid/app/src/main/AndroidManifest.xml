@@ -59,6 +59,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".CapturaImatge">
+            <intent-filter>
+                <action android:name="com.example.alumne.basedades2.CapturaImatge" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MenuCompra" />
     </application>
 
