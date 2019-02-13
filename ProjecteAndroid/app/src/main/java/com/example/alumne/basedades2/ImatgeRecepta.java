@@ -45,24 +45,30 @@ public class ImatgeRecepta {
 
     public static boolean checkifImatgeExisteix(String imagename){
         Bitmap b = null ;
-        File file = ImatgeRecepta.agafaImage(imagename);
-        String path = file.getAbsolutePath();
-        Log.i("ImatgeMagatzem","Path :"+path);
-        if (path != null) {
-            b = BitmapFactory.decodeFile(path);
-        }if(b == null ||  b.equals("")) {
-            return false ;
+        try {
+            File file = ImatgeRecepta.agafaImage(imagename);
+            String path = file.getAbsolutePath();
+            Log.i("ImatgeMagatzem", "Path :" + path);
+            if (path != null) {
+                b = BitmapFactory.decodeFile(path);
+            }
+            if (b == null || b.equals("")) {
+                return false;
+            }
+            return true;
+        }catch(Exception e){
+            Log.d("DEV:", "EXCEPCIO A EXISTEIX IMATGE AMB CODI REC");
+            return false;
         }
-        return true;
     }
     public static Bitmap agafaImatge(long id) {
         String nomimatge="img_"+id+".jpg";
         Bitmap res=null;
         Bitmap reduit=null;
         if (checkifImatgeExisteix(nomimatge)){
-            File file = ImatgeRecepta.agafaImage(nomimatge);
-            String path = file.getAbsolutePath();
-            res = BitmapFactory.decodeFile(path);
+            File file3 = ImatgeRecepta.agafaImage(nomimatge);
+            String path2 = file3.getAbsolutePath();
+            res = BitmapFactory.decodeFile(path2);
             int alt = (int) (res.getHeight() * AMPLADA_IMATGE/ res.getWidth());
             reduit = Bitmap.createScaledBitmap(res, AMPLADA_IMATGE, alt, true);
         }return  reduit;

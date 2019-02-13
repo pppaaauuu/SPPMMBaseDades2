@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -22,8 +23,8 @@ public class CapturaImatge extends AppCompatActivity {
     private Bitmap bitmap;
     private Uri fotoUriCamera;
     private MenuItem opcioGuardaFoto;
-    static final int IMATGE_DESDE_CAMERA = 1;
-    static final int IMATGE_DESDE_GALERIA = 2;
+    static final int IMATGE_DESDE_CAMERA = 9;
+    static final int IMATGE_DESDE_GALERIA = 8;
     static final int AMPLADA_IMATGE = 1080;
     private DataSourceRebost db;
     private long codi;
@@ -52,9 +53,10 @@ public class CapturaImatge extends AppCompatActivity {
                  public void onClick(View v) {
                      Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
 
-                     File foto = new File(Environment.getExternalStorageDirectory(), "Foto.jpg");
-                     intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(foto));
-                     fotoUriCamera = Uri.fromFile(foto);
+                     File foto2 = new File(Environment.getExternalStorageDirectory(), "Foto.jpg");
+                     fotoUriCamera = Uri.fromFile(foto2);
+                     intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(foto2));
+
                      startActivityForResult(intent, IMATGE_DESDE_CAMERA);
                  }
             });
@@ -79,15 +81,21 @@ public class CapturaImatge extends AppCompatActivity {
 }
 
 protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        Log.d("DEV:", "ON ACTIVITY RESULT ENTRANT");
+        File foto2 = new File(Environment.getExternalStorageDirectory(), "Foto.jpg");
+        fotoUriCamera = Uri.fromFile(foto2);
         if(requestCode == IMATGE_DESDE_CAMERA && resultCode == Activity.RESULT_OK){
+            Log.d("DEV:", "IMATGE CAMERA ENTRANT");
             ContentResolver contRes = getContentResolver();
+            Log.d("DEV:", "CONTENT RESOLVER");
             contRes.notifyChange(fotoUriCamera,null);
-             bitmap = carregaFoto(contRes,fotoUriCamera);
+            Log.d("DEV:", "NOTIFY CHANGE");
+            bitmap = carregaFoto(contRes,fotoUriCamera);
+            Log.d("DEV:", "BITMAP CARREGAT");
             if(bitmap == null){
                 Toast.makeText(this,"No es pot carregar la imatge desde la càmera", Toast.LENGTH_SHORT).show();
             }
-        }
-        if(requestCode == IMATGE_DESDE_GALERIA && resultCode == Activity.RESULT_OK){
+        }else if(requestCode == IMATGE_DESDE_GALERIA && resultCode == Activity.RESULT_OK){
             Uri fotoUriGaleria = data.getData();
             if(fotoUriGaleria != null){
                 ContentResolver contRes = getContentResolver();

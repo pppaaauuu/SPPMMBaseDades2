@@ -117,6 +117,10 @@ Me qued que he de començar el layout de capturar imatges (activity_captura_foto
 He afegit el´layout capturar imatges i he adaptat el codi de l'activitat de SPPMM.
 Guarda a la SD una imatge per rec identificantla amb la id de la recepta
 
+13/02
+No se perqué no guarda a SD, sinó a espai intern
+He corregit un bug que dona l'error guardat a la imatge produit perque en cridar el content resolver la uri de la fotocamera donava null pointer exception perqué estava declarada localment dins un listener que no s'havia executat en tornar a carregar l'activity en tornar de fer la foto. 
+També he corregit una excepció ficantla dins un trycatch al mètode existeiximatge (o similar) que tot i que no afectava el funcionament de l'app sortia als registres mentre buscava l'altre bug
 
 _______________________________________________________________________________________________________________
 Comandes git 
