@@ -13,9 +13,10 @@ public class DataSourceRebost {
 
     private SQLiteDatabase database;
     private RebostHelper dbAjuda;
-    private String[] allColumnsIng = {RebostHelper.COLUMN_IDINGREDIENT, RebostHelper.COLUMN_NOMINGREDIENT, RebostHelper.COLUMN_BASICINGREDIENT, RebostHelper.COLUMN_QUEDAINGREDIENT, RebostHelper.COLUMN_COMPRAINGREDIENT};
+    private String[] allColumnsIng = {RebostHelper.COLUMN_IDINGREDIENT, RebostHelper.COLUMN_NOMINGREDIENT, RebostHelper.COLUMN_BASICINGREDIENT, RebostHelper.COLUMN_QUEDAINGREDIENT, RebostHelper.COLUMN_COMPRAINGREDIENT, RebostHelper.COLUMN_CAT1INGREDIENT, RebostHelper.COLUMN_CAT2INGREDIENT};
     private String[] allColumnsRec = {RebostHelper.COLUMN_IDRECEPTA, RebostHelper.COLUMN_NOMRECEPTA, RebostHelper.COLUMN_TEXTRECEPTA};
     private String[] allColumnsRecIng = {RebostHelper.COLUMN_RECEPTA, RebostHelper.COLUMN_INGREDIENT};
+    private String[] allColumnsCatIng = {RebostHelper.COLUMN_IDCATEGORIA, RebostHelper.COLUMN_NOMCATEGORIA};
 
 
     public DataSourceRebost(Context context) { //CONSTRUCTOR
@@ -25,10 +26,10 @@ public class DataSourceRebost {
     public void open() throws SQLException {
         database = dbAjuda.getWritableDatabase();
     }
+   
     public void close() {
         dbAjuda.close();
     }
-
 
     public Ingredient createIng(Ingredient ing){
         ContentValues values = new ContentValues();
@@ -36,6 +37,8 @@ public class DataSourceRebost {
         values.put(RebostHelper.COLUMN_BASICINGREDIENT, ing.isBasic());
         values.put(RebostHelper.COLUMN_QUEDAINGREDIENT, ing.isQueda());
         values.put(RebostHelper.COLUMN_COMPRAINGREDIENT, ing.isCompra());
+        values.put(RebostHelper.COLUMN_CAT1INGREDIENT, ing.getCat1());
+        values.put(RebostHelper.COLUMN_CAT2INGREDIENT, ing.getCat2());
         long insertId = database.insert(RebostHelper.TABLE_INGREDIENTS,null,values);
         ing.setId(insertId);
         return ing;
@@ -48,6 +51,8 @@ public class DataSourceRebost {
         values.put(RebostHelper.COLUMN_BASICINGREDIENT, ing.isBasic());
         values.put(RebostHelper.COLUMN_QUEDAINGREDIENT, ing.isQueda());
         values.put(RebostHelper.COLUMN_COMPRAINGREDIENT, ing.isCompra());
+        values.put(RebostHelper.COLUMN_CAT1INGREDIENT, ing.getCat1());
+        values.put(RebostHelper.COLUMN_CAT2INGREDIENT, ing.getCat2());
         return database.update(RebostHelper.TABLE_INGREDIENTS, values,RebostHelper.COLUMN_IDINGREDIENT + "=" + id,null) > 0;
     }
 
@@ -93,7 +98,29 @@ public class DataSourceRebost {
         else ing.setQueda(true);
         if(cursor.getInt(4) == 0) ing.setCompra(false);
         else ing.setCompra(true);
+        ing.setCat1(cursor.getInt(5));
+        ing.setCat2(cursor.getInt(6));
         return ing;
+    }
+
+    public Recepta createCat(Categoria cat){
+        ContentValues values = new ContentValues();
+        values.put(RebostHelper.COLUMN_NOMCATEGORIA, cat.getNom());
+        int insertId = database.insert(RebostHelper.TABLE_CATEGORIA,null,values);
+        cat.setId(insertId);
+        return cat;
+    }
+
+    public boolean updateCat(Categoria cat){
+        ContentValues values = new ContentValues();
+        long id = cat.getId();
+        values.put(RebostHelper.COLUMN_NOMCATEGORIA, cat.getNom());
+        return database.update(RebostHelper.TABLE_CATEGORIA, values,RebostHelper.COLUMN_IDCATEGORIA + "=" + id,null) > 0;
+    }
+
+	public void deleteCat(Categoria cat){
+        long id = cat.getId();
+        database.delete(RebostHelper.TABLE_CATEGORIA, RebostHelper.COLUMN_IDCATEGORIA + "=" + id, null );       
     }
 
     public Recepta createRec(Recepta rec){
@@ -205,6 +232,7 @@ public class DataSourceRebost {
         database.execSQL("delete from "+ RebostHelper.TABLE_RECEPTA);
         database.execSQL("delete from "+ RebostHelper.TABLE_INGREDIENTS);
         database.execSQL("delete from "+ RebostHelper.TABLE_RECPING);
+        database.execSQL("delete from "+ RebostHelper.TABLE_CATING);
     }
 
 }

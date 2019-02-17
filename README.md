@@ -122,6 +122,11 @@ No se perqué no guarda a SD, sinó a espai intern
 He corregit un bug que dona l'error guardat a la imatge produit perque en cridar el content resolver la uri de la fotocamera donava null pointer exception perqué estava declarada localment dins un listener que no s'havia executat en tornar a carregar l'activity en tornar de fer la foto. 
 També he corregit una excepció ficantla dins un trycatch al mètode existeiximatge (o similar) que tot i que no afectava el funcionament de l'app sortia als registres mentre buscava l'altre bug
 
+
+
+15/02
+He creat mes atributs per ingredient a la classe rebosthelper. me queda afegirlos al pojo. He creat la taula categoria. i afegit autor i temps a recepta. Està a mig fer
+, no tots els pojos i tots els inserts estan al dia. m'he quedat despres de crear el pojo categoria. he dafegir els caps de les altres taules als inserts i als pojos
 _______________________________________________________________________________________________________________
 Comandes git 
 git clone https://github.com/pppaaauuu/SPPMMBaseDades2
