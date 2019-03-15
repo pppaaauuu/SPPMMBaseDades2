@@ -6,6 +6,10 @@ public class Ingredient {
     private boolean queda;
     private boolean compra;
     private boolean basic;
+    private long cat1;
+    private long cat2;
+
+
 
     public Ingredient(String nom1){
         this.nom = nom1;
@@ -69,6 +73,19 @@ public class Ingredient {
     }
 
 
+    public long getCat1() {
+        return cat1;
+    }
 
+    public void setCat1(long cat1) {
+        this.cat1 = cat1;
+    }
 
+    public long getCat2() {
+        return cat2;
+    }
+
+    public void setCat2(long cat2) {
+        this.cat2 = cat2;
+    }
 }

@@ -31,8 +31,8 @@ public class RebostHelper extends SQLiteOpenHelper {
     public static final String COLUMN_INGREDIENT = "id_ingredient";
 
     public static final String TABLE_CATEGORIA = "categoria";
-    public static final Strib COLUMN_IDCATEGORIA = "id_categoria";
-    public static final Strib COLUMN_NOMCATEGORIA = "nom_categoria";
+    public static final String COLUMN_IDCATEGORIA = "id_categoria";
+    public static final String COLUMN_NOMCATEGORIA = "nom_categoria";
 
     private static final String DATABASE_NAME = "receptes";
     private static final int DATABASE_VERSION = 1;
@@ -106,6 +106,7 @@ public class RebostHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_INGREDIENTS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_RECEPTA);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_RECPING);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CATEGORIA);
         onCreate(db);
     }
 

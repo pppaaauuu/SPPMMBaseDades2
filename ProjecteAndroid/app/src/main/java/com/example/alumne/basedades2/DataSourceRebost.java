@@ -14,7 +14,7 @@ public class DataSourceRebost {
     private SQLiteDatabase database;
     private RebostHelper dbAjuda;
     private String[] allColumnsIng = {RebostHelper.COLUMN_IDINGREDIENT, RebostHelper.COLUMN_NOMINGREDIENT, RebostHelper.COLUMN_BASICINGREDIENT, RebostHelper.COLUMN_QUEDAINGREDIENT, RebostHelper.COLUMN_COMPRAINGREDIENT, RebostHelper.COLUMN_CAT1INGREDIENT, RebostHelper.COLUMN_CAT2INGREDIENT};
-    private String[] allColumnsRec = {RebostHelper.COLUMN_IDRECEPTA, RebostHelper.COLUMN_NOMRECEPTA, RebostHelper.COLUMN_TEXTRECEPTA};
+    private String[] allColumnsRec = {RebostHelper.COLUMN_IDRECEPTA, RebostHelper.COLUMN_NOMRECEPTA, RebostHelper.COLUMN_TEXTRECEPTA, RebostHelper.COLUMN_AUTORRECEPTA, RebostHelper.COLUMN_TEMPSRECEPTA};
     private String[] allColumnsRecIng = {RebostHelper.COLUMN_RECEPTA, RebostHelper.COLUMN_INGREDIENT};
     private String[] allColumnsCatIng = {RebostHelper.COLUMN_IDCATEGORIA, RebostHelper.COLUMN_NOMCATEGORIA};
 
@@ -103,10 +103,10 @@ public class DataSourceRebost {
         return ing;
     }
 
-    public Recepta createCat(Categoria cat){
+    public Categoria createCat(Categoria cat){
         ContentValues values = new ContentValues();
         values.put(RebostHelper.COLUMN_NOMCATEGORIA, cat.getNom());
-        int insertId = database.insert(RebostHelper.TABLE_CATEGORIA,null,values);
+        long insertId = database.insert(RebostHelper.TABLE_CATEGORIA,null,values);
         cat.setId(insertId);
         return cat;
     }
@@ -127,6 +127,8 @@ public class DataSourceRebost {
         ContentValues values = new ContentValues();
         values.put(RebostHelper.COLUMN_NOMRECEPTA, rec.getNom());
         values.put(RebostHelper.COLUMN_TEXTRECEPTA, rec.getText());
+        values.put(RebostHelper.COLUMN_AUTORRECEPTA, rec.getAutor());
+        values.put(RebostHelper.COLUMN_TEMPSRECEPTA, rec.getTemps());
         long insertId = database.insert(RebostHelper.TABLE_RECEPTA,null,values);
         rec.setId(insertId);
         List<Ingredient> ings = rec.getIngredients();
@@ -147,6 +149,8 @@ public class DataSourceRebost {
         long id = rec.getId();
         values.put(RebostHelper.COLUMN_NOMRECEPTA, rec.getNom());
         values.put(RebostHelper.COLUMN_TEXTRECEPTA, rec.getText());
+        values.put(RebostHelper.COLUMN_AUTORRECEPTA, rec.getAutor());
+        values.put(RebostHelper.COLUMN_TEMPSRECEPTA, rec.getTemps());
         database.delete(RebostHelper.TABLE_RECPING, RebostHelper.COLUMN_RECEPTA + "=" + id, null );
         List<Ingredient> ings = rec.getIngredients();
         for(int i = 0; i < ings.size(); i++){
@@ -198,6 +202,8 @@ public class DataSourceRebost {
         rec.setNom(cursor.getString(1));
         rec.setText(cursor.getString(2));
         rec.setIngredients(getIngsRec(rec.getId()));
+        rec.setAutor(cursor.getString(3));
+        rec.setTemps(cursor.getLong(4));
         return rec;
     }
 
@@ -232,7 +238,7 @@ public class DataSourceRebost {
         database.execSQL("delete from "+ RebostHelper.TABLE_RECEPTA);
         database.execSQL("delete from "+ RebostHelper.TABLE_INGREDIENTS);
         database.execSQL("delete from "+ RebostHelper.TABLE_RECPING);
-        database.execSQL("delete from "+ RebostHelper.TABLE_CATING);
+        database.execSQL("delete from "+ RebostHelper.TABLE_CATEGORIA);
     }
 
 }

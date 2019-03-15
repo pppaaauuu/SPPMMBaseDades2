@@ -21,7 +21,7 @@ import java.io.File;
 
 public class CapturaImatge extends AppCompatActivity {
     private Bitmap bitmap;
-    private Uri fotoUriCamera;
+
     private MenuItem opcioGuardaFoto;
     static final int IMATGE_DESDE_CAMERA = 9;
     static final int IMATGE_DESDE_GALERIA = 8;
@@ -54,7 +54,7 @@ public class CapturaImatge extends AppCompatActivity {
                      Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
 
                      File foto2 = new File(Environment.getExternalStorageDirectory(), "Foto.jpg");
-                     fotoUriCamera = Uri.fromFile(foto2);
+                     Uri fotoUriCamera = Uri.fromFile(foto2);
                      intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(foto2));
 
                      startActivityForResult(intent, IMATGE_DESDE_CAMERA);
@@ -83,7 +83,7 @@ public class CapturaImatge extends AppCompatActivity {
 protected void onActivityResult(int requestCode, int resultCode, Intent data){
         Log.d("DEV:", "ON ACTIVITY RESULT ENTRANT");
         File foto2 = new File(Environment.getExternalStorageDirectory(), "Foto.jpg");
-        fotoUriCamera = Uri.fromFile(foto2);
+        Uri fotoUriCamera = Uri.fromFile(foto2);
         if(requestCode == IMATGE_DESDE_CAMERA && resultCode == Activity.RESULT_OK){
             Log.d("DEV:", "IMATGE CAMERA ENTRANT");
             ContentResolver contRes = getContentResolver();

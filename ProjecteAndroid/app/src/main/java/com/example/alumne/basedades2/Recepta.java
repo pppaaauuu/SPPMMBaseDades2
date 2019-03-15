@@ -9,6 +9,8 @@ public class Recepta {
     private String nom;
     private String text;
     private ArrayList<Ingredient> ingredients;
+    private String autor;
+    private long temps;
 
     public long getId() {
         return id;
@@ -64,5 +66,21 @@ public class Recepta {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public long getTemps() {
+        return temps;
+    }
+
+    public void setTemps(long temps) {
+        this.temps = temps;
     }
 }

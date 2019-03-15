@@ -127,6 +127,14 @@ També he corregit una excepció ficantla dins un trycatch al mètode existeixim
 15/02
 He creat mes atributs per ingredient a la classe rebosthelper. me queda afegirlos al pojo. He creat la taula categoria. i afegit autor i temps a recepta. Està a mig fer
 , no tots els pojos i tots els inserts estan al dia. m'he quedat despres de crear el pojo categoria. he dafegir els caps de les altres taules als inserts i als pojos
+
+16/02
+He seguit ficant els nous atributs a totes les classes.
+
+15/03
+CRASH enintentar cridar la activity captura imatge per uri exposada
+https://stackoverflow.com/questions/38200282/android-os-fileuriexposedexception-file-storage-emulated-0-test-txt-exposed
+
 _______________________________________________________________________________________________________________
 Comandes git 
 git clone https://github.com/pppaaauuu/SPPMMBaseDades2
